@@ -6,7 +6,7 @@ TL;DR: See `./results.txt` in the root of this repository.
 ## Prerequisites
 
 1. `pv`, `gunzip`, `ruby` (including `gem` and `bundler`).
-2. PostgreSQL DB that you can connect to by simply running `psql` (no credentials).
+1. PostgreSQL DB that you can connect to by simply running `psql` (no credentials).
 
 ## Running
 
@@ -14,8 +14,9 @@ The project mostly follows [Scripts to Rule Them All](https://github.blog/2015-0
 basic instructions are as follows:
 
 1. Call `./script/bootstrap` in order to generate the partition-creating SQL (in `/sql/run`) and data (in `/sql/data`).
-2. Call `./script/main` in order to execute the code and create your partitioned and populated table in the `partitionpoc` database.
-3. Call `./script/setup` if you want to clear everything out and do it again.
+1. Call `./script/main` in order to execute the code and create your partitioned and populated table in the `partitionpoc` database.
+1. Call `./script/console` to log into your database where you have implemented partitioning.
+1. Call `./script/setup` if you want to clear everything out and do it again.
 
 The results are written out to the screen, with the most interesting stuff also written to `results.txt` in the root directory.
 I've checked that file in so that folks who are browsing can see how it works.
