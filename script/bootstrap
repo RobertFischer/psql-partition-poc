@@ -1,0 +1,23 @@
+#!/bin/bash -exu
+
+cd `dirname $0`/..
+ROOTDIR=`pwd`
+
+which psql || ( echo "Please install PSQL" && exit -1 )
+which ruby || ( which brew && brew install ruby ) || ( echo "Please install ruby" && exit -1 )
+
+which bundler || gem install bundler
+
+cd "$ROOTDIR" 
+chmod +w Gemfile
+bundler install --verbose
+
+cd "$ROOTDIR"
+mkdir -p ./sql/data ./sql/run
+
+bundler exec ruby ./generate-sql.rb ./sql/run
+bundler exec ruby ./generate-data.rb ./sql/data
+
+psql -l || ( createdb && psql -l )
+
+echo 'You may now run ./script/main -- ENJOY!'

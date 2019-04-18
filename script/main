@@ -1,0 +1,30 @@
+#!/bin/bash -exu
+
+cd `dirname $0`/..
+ROOTDIR=`pwd`
+
+mkdir -p "$ROOTDIR/sql/run" "$ROOTDIR/sql/data"
+
+DBNAME="partitionpoc"
+
+dropdb --if-exists "$DBNAME"
+createdb "$DBNAME"
+
+rm -f "$ROOTDIR/results.txt"
+touch "$ROOTDIR/results.txt"
+
+cd "$ROOTDIR/sql/run"
+for SQLFILE in `ls -1 *.sql | sort -g`
+do
+	pv --delay-start 2 "$SQLFILE" | tee -a "$ROOTDIR/results.txt" | psql "$DBNAME" -a -1 
+	echo >> "$ROOTDIR/results.txt"
+done
+
+cd "$ROOTDIR/sql/data"
+for SQLFILE in `ls -1 *.sql.gz`
+do
+	pv --delay-start 2 "$SQLFILE" | gunzip | psql "$DBNAME" -1 -b --output=/dev/null
+done
+
+psql "$DBNAME" -a -1 --command="SELECT pgc.relname AS table_name, pgc.relpages AS table_pages, pg_size_pretty(pg_total_relation_size(pgc.relname::regclass)) AS table_disk_footprint FROM pg_class pgc WHERE pgc.relname LIKE 'tbl_%' ORDER BY pgc.relname DESC" | tee -a "$ROOTDIR/results.txt"
+psql "$DBNAME" -a -1 --command="SELECT COUNT(*) as userspace_count_from_main FROM tbl_main" | tee -a "$ROOTDIR/results.txt"
