@@ -6,6 +6,7 @@ cd "$HEREDIR/.."
 ROOTDIR=`pwd`
 
 rm -rvf "$ROOTDIR/Gemfile.lock" "$ROOTDIR/sql/run" "$ROOTDIR/sql/data"
+dropdb --if-exists partitionpoc
 
 "$HEREDIR/bootstrap"
 
