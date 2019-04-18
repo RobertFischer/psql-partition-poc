@@ -1,262 +1,264 @@
-		CREATE TABLE tbl_main (
+		CREATE TABLE public.tbl_main (
 			first_name VARCHAR NOT NULL,
 			last_name VARCHAR NOT NULL,
 			birthdate DATE NOT NULL,
 			favorite_band VARCHAR NOT NULL
 		);
 
-CREATE TABLE tbl_2002_birthday ( CHECK ( 2002 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_2001_birthday ( CHECK ( 2001 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_2000_birthday ( CHECK ( 2000 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1999_birthday ( CHECK ( 1999 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1998_birthday ( CHECK ( 1998 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1997_birthday ( CHECK ( 1997 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1996_birthday ( CHECK ( 1996 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1995_birthday ( CHECK ( 1995 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1994_birthday ( CHECK ( 1994 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1993_birthday ( CHECK ( 1993 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1992_birthday ( CHECK ( 1992 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1991_birthday ( CHECK ( 1991 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1990_birthday ( CHECK ( 1990 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1989_birthday ( CHECK ( 1989 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1988_birthday ( CHECK ( 1988 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1987_birthday ( CHECK ( 1987 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1986_birthday ( CHECK ( 1986 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1985_birthday ( CHECK ( 1985 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1984_birthday ( CHECK ( 1984 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1983_birthday ( CHECK ( 1983 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1982_birthday ( CHECK ( 1982 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1981_birthday ( CHECK ( 1981 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1980_birthday ( CHECK ( 1980 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1979_birthday ( CHECK ( 1979 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1978_birthday ( CHECK ( 1978 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1977_birthday ( CHECK ( 1977 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1976_birthday ( CHECK ( 1976 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1975_birthday ( CHECK ( 1975 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1974_birthday ( CHECK ( 1974 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1973_birthday ( CHECK ( 1973 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1972_birthday ( CHECK ( 1972 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1971_birthday ( CHECK ( 1971 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1970_birthday ( CHECK ( 1970 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1969_birthday ( CHECK ( 1969 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1968_birthday ( CHECK ( 1968 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1967_birthday ( CHECK ( 1967 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1966_birthday ( CHECK ( 1966 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1965_birthday ( CHECK ( 1965 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1964_birthday ( CHECK ( 1964 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1963_birthday ( CHECK ( 1963 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1962_birthday ( CHECK ( 1962 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1961_birthday ( CHECK ( 1961 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1960_birthday ( CHECK ( 1960 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1959_birthday ( CHECK ( 1959 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1958_birthday ( CHECK ( 1958 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1957_birthday ( CHECK ( 1957 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1956_birthday ( CHECK ( 1956 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1955_birthday ( CHECK ( 1955 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1954_birthday ( CHECK ( 1954 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
-CREATE TABLE tbl_1953_birthday ( CHECK ( 1953 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( tbl_main );
+		CREATE SCHEMA birthday_parts;
+
+CREATE TABLE birthday_parts.tbl_2002_birthday ( CHECK ( 2002 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_2001_birthday ( CHECK ( 2001 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_2000_birthday ( CHECK ( 2000 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1999_birthday ( CHECK ( 1999 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1998_birthday ( CHECK ( 1998 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1997_birthday ( CHECK ( 1997 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1996_birthday ( CHECK ( 1996 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1995_birthday ( CHECK ( 1995 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1994_birthday ( CHECK ( 1994 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1993_birthday ( CHECK ( 1993 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1992_birthday ( CHECK ( 1992 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1991_birthday ( CHECK ( 1991 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1990_birthday ( CHECK ( 1990 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1989_birthday ( CHECK ( 1989 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1988_birthday ( CHECK ( 1988 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1987_birthday ( CHECK ( 1987 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1986_birthday ( CHECK ( 1986 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1985_birthday ( CHECK ( 1985 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1984_birthday ( CHECK ( 1984 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1983_birthday ( CHECK ( 1983 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1982_birthday ( CHECK ( 1982 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1981_birthday ( CHECK ( 1981 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1980_birthday ( CHECK ( 1980 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1979_birthday ( CHECK ( 1979 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1978_birthday ( CHECK ( 1978 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1977_birthday ( CHECK ( 1977 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1976_birthday ( CHECK ( 1976 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1975_birthday ( CHECK ( 1975 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1974_birthday ( CHECK ( 1974 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1973_birthday ( CHECK ( 1973 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1972_birthday ( CHECK ( 1972 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1971_birthday ( CHECK ( 1971 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1970_birthday ( CHECK ( 1970 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1969_birthday ( CHECK ( 1969 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1968_birthday ( CHECK ( 1968 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1967_birthday ( CHECK ( 1967 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1966_birthday ( CHECK ( 1966 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1965_birthday ( CHECK ( 1965 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1964_birthday ( CHECK ( 1964 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1963_birthday ( CHECK ( 1963 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1962_birthday ( CHECK ( 1962 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1961_birthday ( CHECK ( 1961 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1960_birthday ( CHECK ( 1960 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1959_birthday ( CHECK ( 1959 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1958_birthday ( CHECK ( 1958 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1957_birthday ( CHECK ( 1957 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1956_birthday ( CHECK ( 1956 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1955_birthday ( CHECK ( 1955 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1954_birthday ( CHECK ( 1954 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
+CREATE TABLE birthday_parts.tbl_1953_birthday ( CHECK ( 1953 = EXTRACT( year FROM birthdate ) ) ) INHERITS ( public.tbl_main );
 
 		CREATE OR REPLACE FUNCTION tbl_main_partition_function()
 		RETURNS TRIGGER AS $$
 			BEGIN
 				IF ( EXTRACT(year FROM NEW.birthdate) = 2002 ) THEN
-					INSERT INTO tbl_2002_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_2002_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 2001 ) THEN
-					INSERT INTO tbl_2001_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_2001_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 2000 ) THEN
-					INSERT INTO tbl_2000_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_2000_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1999 ) THEN
-					INSERT INTO tbl_1999_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1999_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1998 ) THEN
-					INSERT INTO tbl_1998_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1998_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1997 ) THEN
-					INSERT INTO tbl_1997_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1997_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1996 ) THEN
-					INSERT INTO tbl_1996_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1996_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1995 ) THEN
-					INSERT INTO tbl_1995_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1995_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1994 ) THEN
-					INSERT INTO tbl_1994_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1994_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1993 ) THEN
-					INSERT INTO tbl_1993_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1993_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1992 ) THEN
-					INSERT INTO tbl_1992_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1992_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1991 ) THEN
-					INSERT INTO tbl_1991_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1991_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1990 ) THEN
-					INSERT INTO tbl_1990_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1990_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1989 ) THEN
-					INSERT INTO tbl_1989_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1989_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1988 ) THEN
-					INSERT INTO tbl_1988_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1988_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1987 ) THEN
-					INSERT INTO tbl_1987_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1987_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1986 ) THEN
-					INSERT INTO tbl_1986_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1986_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1985 ) THEN
-					INSERT INTO tbl_1985_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1985_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1984 ) THEN
-					INSERT INTO tbl_1984_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1984_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1983 ) THEN
-					INSERT INTO tbl_1983_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1983_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1982 ) THEN
-					INSERT INTO tbl_1982_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1982_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1981 ) THEN
-					INSERT INTO tbl_1981_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1981_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1980 ) THEN
-					INSERT INTO tbl_1980_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1980_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1979 ) THEN
-					INSERT INTO tbl_1979_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1979_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1978 ) THEN
-					INSERT INTO tbl_1978_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1978_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1977 ) THEN
-					INSERT INTO tbl_1977_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1977_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1976 ) THEN
-					INSERT INTO tbl_1976_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1976_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1975 ) THEN
-					INSERT INTO tbl_1975_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1975_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1974 ) THEN
-					INSERT INTO tbl_1974_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1974_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1973 ) THEN
-					INSERT INTO tbl_1973_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1973_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1972 ) THEN
-					INSERT INTO tbl_1972_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1972_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1971 ) THEN
-					INSERT INTO tbl_1971_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1971_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1970 ) THEN
-					INSERT INTO tbl_1970_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1970_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1969 ) THEN
-					INSERT INTO tbl_1969_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1969_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1968 ) THEN
-					INSERT INTO tbl_1968_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1968_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1967 ) THEN
-					INSERT INTO tbl_1967_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1967_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1966 ) THEN
-					INSERT INTO tbl_1966_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1966_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1965 ) THEN
-					INSERT INTO tbl_1965_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1965_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1964 ) THEN
-					INSERT INTO tbl_1964_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1964_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1963 ) THEN
-					INSERT INTO tbl_1963_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1963_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1962 ) THEN
-					INSERT INTO tbl_1962_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1962_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1961 ) THEN
-					INSERT INTO tbl_1961_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1961_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1960 ) THEN
-					INSERT INTO tbl_1960_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1960_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1959 ) THEN
-					INSERT INTO tbl_1959_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1959_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1958 ) THEN
-					INSERT INTO tbl_1958_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1958_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1957 ) THEN
-					INSERT INTO tbl_1957_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1957_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1956 ) THEN
-					INSERT INTO tbl_1956_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1956_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1955 ) THEN
-					INSERT INTO tbl_1955_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1955_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1954 ) THEN
-					INSERT INTO tbl_1954_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1954_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				IF ( EXTRACT(year FROM NEW.birthdate) = 1953 ) THEN
-					INSERT INTO tbl_1953_birthday VALUES (NEW.*);
+					INSERT INTO birthday_parts.tbl_1953_birthday VALUES (NEW.*);
 					RETURN NULL;
 				END IF;
 				RAISE EXCEPTION 'Birthdate out of range of partition: 1953 to 2002';
@@ -265,65 +267,10 @@ CREATE TABLE tbl_1953_birthday ( CHECK ( 1953 = EXTRACT( year FROM birthdate ) )
 		LANGUAGE plpgsql;
 
 		CREATE TRIGGER tbl_main_partition_trigger
-			BEFORE INSERT ON tbl_main
+			BEFORE INSERT ON public.tbl_main
 			FOR EACH ROW EXECUTE PROCEDURE tbl_main_partition_function();
 
 SELECT pgc.relname AS table_name, pgc.relpages AS table_pages, pg_size_pretty(pg_total_relation_size(pgc.relname::regclass)) AS table_disk_footprint FROM pg_class pgc WHERE pgc.relname LIKE 'tbl_%' ORDER BY pgc.relname DESC
-    table_name     | table_pages | table_disk_footprint 
--------------------+-------------+----------------------
- tbl_main          |           0 | 8192 bytes
- tbl_2002_birthday |           0 | 8192 bytes
- tbl_2001_birthday |          41 | 424 kB
- tbl_2000_birthday |         140 | 1384 kB
- tbl_1999_birthday |         139 | 1360 kB
- tbl_1998_birthday |         140 | 1376 kB
- tbl_1997_birthday |         139 | 1360 kB
- tbl_1996_birthday |         139 | 1360 kB
- tbl_1995_birthday |         141 | 1368 kB
- tbl_1994_birthday |         143 | 1376 kB
- tbl_1993_birthday |         142 | 1368 kB
- tbl_1992_birthday |         142 | 1376 kB
- tbl_1991_birthday |         145 | 1384 kB
- tbl_1990_birthday |         142 | 1368 kB
- tbl_1989_birthday |         142 | 1360 kB
- tbl_1988_birthday |         145 | 1376 kB
- tbl_1987_birthday |         143 | 1360 kB
- tbl_1986_birthday |         146 | 1384 kB
- tbl_1985_birthday |         144 | 1368 kB
- tbl_1984_birthday |         145 | 1376 kB
- tbl_1983_birthday |         144 | 1352 kB
- tbl_1982_birthday |         146 | 1368 kB
- tbl_1981_birthday |         134 | 1360 kB
- tbl_1980_birthday |         136 | 1368 kB
- tbl_1979_birthday |         137 | 1384 kB
- tbl_1978_birthday |         138 | 1384 kB
- tbl_1977_birthday |         137 | 1368 kB
- tbl_1976_birthday |         139 | 1384 kB
- tbl_1975_birthday |         138 | 1368 kB
- tbl_1974_birthday |         140 | 1392 kB
- tbl_1973_birthday |         147 | 1376 kB
- tbl_1972_birthday |         148 | 1384 kB
- tbl_1971_birthday |         148 | 1384 kB
- tbl_1970_birthday |         148 | 1376 kB
- tbl_1969_birthday |         147 | 1352 kB
- tbl_1968_birthday |         149 | 1368 kB
- tbl_1967_birthday |         151 | 1384 kB
- tbl_1966_birthday |         150 | 1368 kB
- tbl_1965_birthday |         150 | 1384 kB
- tbl_1964_birthday |         150 | 1368 kB
- tbl_1963_birthday |         150 | 1360 kB
- tbl_1962_birthday |         151 | 1376 kB
- tbl_1961_birthday |         150 | 1360 kB
- tbl_1960_birthday |         154 | 1384 kB
- tbl_1959_birthday |         152 | 1368 kB
- tbl_1958_birthday |         150 | 1344 kB
- tbl_1957_birthday |         151 | 1360 kB
- tbl_1956_birthday |         153 | 1368 kB
- tbl_1955_birthday |         153 | 1360 kB
- tbl_1954_birthday |         109 | 984 kB
- tbl_1953_birthday |           0 | 8192 bytes
-(51 rows)
-
 SELECT COUNT(*) as userspace_count_from_main FROM tbl_main
  userspace_count_from_main 
 ---------------------------

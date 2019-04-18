@@ -16,6 +16,7 @@ basic instructions are as follows:
 1. Call `./script/bootstrap` in order to generate the partition-creating SQL (in `/sql/run`) and data (in `/sql/data`).
 1. Call `./script/main` in order to execute the code and create your partitioned and populated table in the `partitionpoc` database.
 1. Call `./script/console` to log into your database where you have implemented partitioning.
+  - Note that the tables behind the partitioning are all in the `birthday_parts` schema.
 1. Call `./script/setup` if you want to clear everything out and do it again.
 
 The results are written out to the screen, with the most interesting stuff also written to `results.txt` in the root directory.
